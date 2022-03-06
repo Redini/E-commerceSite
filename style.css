@@ -7,50 +7,65 @@ body {
   /* background: rgb(5,70,186);
 background: linear-gradient(90deg, rgba(5,70,186,1) 40%, rgba(0,134,255,1) 85%); */
   background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+  
 }
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 2.3fr 2fr 1.5fr 0.5fr 1.3fr 0.2fr;
-  gap: 0px 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto; 
+  gap: 200px 10px;
   grid-template-areas:
-    "menu"
-    "banner"
-    "services"
-    "about"
-    "contact"
-    "map"
-    "footer";
+    "banner banner banner banner"
+    "woman man general taping"
+    "aboutPhoto aboutPhoto aboutText aboutText"
+    "contact contact contact contact"
+    "map map map map"
+    "footer footer footer footer";
   height: 100%;
+  max-width: 1200px;
+  margin: 0px 0px 0px 0px;
 }
 
-menu {
-  grid-area: menu;
-  display: flex;
-  gap: 1400px;
+
+
+#navigacja{
+  position: fixed;
   background: rgb(5, 70, 186);
   background: linear-gradient(
     190deg,
     rgba(5, 70, 186, 1) 36%,
     rgba(0, 134, 255, 1) 100%
   );
-  position: fixed;
-  margin: 0%;
   width: 100%;
-  z-index: 999;
+  z-index: 2;
+  
+  
 }
-menu > p#right {
-  display: flex;
-  gap: 30px;
+#navbarNav > ul > li > a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 8%;
+  color: rgb(15, 13, 13) 
+}
+#knefel2{
+  font-weight: 900;
+  
+}
+#brand{
+  border-right: 1px solid black;
+  padding-right: 10px;
+  
+  text-align: center;
 }
 
-a {
+
+
+#woman, #man, #general, #taping > a {
   text-decoration: none;
   color: white;
   font-size: 0.8em;
-}
-a:hover {
-  text-decoration: underline;
 }
 
 #banner {
@@ -64,68 +79,62 @@ a:hover {
   text-align: center;
   align-items: center;
   justify-content: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  
   
 }
-#banner > p#main {
+#banner img{
+  width: 1200px;
+  height: 800px;
+}
+/* #banner > p#main {
   width: 700px;
   height: 150px;
   font-size: 3em;
 }
 #banner > p#sub {
   height: 30px;
-}
-#services {
-  grid-area: services;
-  background-color: rgb(238, 238, 238);
+} */
 
-  /* border: 2px solid red; */
-}
-#about {
-  grid-area: about;
-  position: relative;
-  height: 500px;
-
-  /* border: 2px solid green; */
-}
 .aboutMeTxt {
-  font-size: 0.9em;
-
-  height: 250px;
-  width: 1000px;
-  background-color: lightblue;
-  position: absolute;
-  z-index: -1;
-  left: 30%;
-  top: 80px;
+  grid-area: aboutText;
+  font-size: 1em;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 40px 4px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 40px 4px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 40px 4px rgba(66, 68, 90, 1);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  font-family: "Kumbh Sans", sans-serif;
 }
-.aboutMeTxt > p{
-  position: absolute;
-  top: 30px;
-  left: 300px;
-  width: 700px;
-
+.aboutMeTxt > span {
+  font-size: 1em;
+  background-color: blue;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  height: 50px;
 }
-.aboutMeTxt > p#aboutMe{
-  position: absolute;
-  top: -10px;
-  left: 300px;
-  width: 600px;
 
-}
 .aboutMePhoto {
-  height: 400px;
-  width: 400px;
-  border-radius: 50%;
+  grid-area: aboutPhoto;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 0px 0px 40px 4px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 40px 4px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 40px 4px rgba(66, 68, 90, 1);
+}
+.aboutMePhoto > img {
+  height: 100%;
+  width: 100%;
+
   background-image: url(aboutMe.png);
-  position: absolute;
-  left: 15%;
-  top: 0;
-  bottom: 0;
-  right: 0;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 #contact {
   grid-area: contact;
@@ -133,26 +142,28 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
-.kontakt{
+.kontakt {
   font-size: 1.2em;
 }
-.address{
+.address {
   font-size: 0.7em;
 }
-.email{
+.email {
   font-size: 0.7em;
 }
-.phone{
+.phone {
+  font-size: 0.7em;
+}
+.klinika {
   font-size: 0.7em;
 }
 #map {
   grid-area: map;
 
-  /* border: 2px solid black; */
+ 
 }
-#map > iframe{
+#map > iframe {
   width: 100%;
 }
 footer {
@@ -162,7 +173,7 @@ footer {
   align-items: center;
   justify-content: center;
 
-  /* border: 2px solid orange; */
+  
 }
 footer > p {
   font-size: 0.8em;
@@ -185,49 +196,23 @@ footer > p {
   --width-container: 1200px;
 }
 
-#services {
-  align-items: flex-start;
-
-  display: flex;
-
-  justify-content: center;
-  padding: var(--spacing-xxl) var(--spacing-l);
+#woman {
+  grid-area: woman;
 }
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column-gap: var(--spacing-l);
-  grid-row-gap: var(--spacing-l);
-  max-width: var(--width-container);
-  width: 100%;
+#taping {
+  grid-area: taping;
 }
-
-@media (min-width: 540px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+#general {
+  grid-area: general;
 }
-
-@media (min-width: 960px) {
-  .card-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (min-widh: 375px) {
-  
-  body{
-    width: 100%;
-    height: 100%;
-  }
-  #banner{
-    height: 100px;
-  }
+#man {
+  grid-area: man;
 }
 
 .card {
   list-style: none;
   position: relative;
+  border-radius: var(--spacing-l);
 }
 
 .card:before {
@@ -256,15 +241,15 @@ footer > p {
   transform: scale(1.05) translateZ(0);
 }
 
-.card-grid:hover > .card:not(:hover) .card__background {
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+/* .card:not(:hover) .card__background {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(4px);
 }
-.card-grid:hover > .card:not(:hover) .card__category {
-  filter: blur(2.5px);
+ .card:not(:hover) .card__category {
+  filter: blur(2px);
 }
-.card-grid:hover > .card:not(:hover) .card__heading {
-  filter: blur(2.5px);
-}
+  .card:not(:hover) .card__heading {
+  filter: blur(2px);
+} */
 
 .card__content {
   left: 0;
@@ -278,6 +263,8 @@ footer > p {
   font-size: 0.9rem;
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
+  text-shadow: 2px 2px 8px black;
+  width: 100%;
 }
 
 .card__heading {
@@ -286,4 +273,75 @@ footer > p {
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
   word-spacing: 100vw;
+  text-shadow: 2px 2px 8px black;
+  width: 100%;
 }
+@media screen and (max-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 3% 5%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "banner banner"
+      "woman taping"
+      "general man"
+      "aboutPhoto aboutPhoto"
+      "aboutText aboutText"
+      "contact contact"
+      "map map"
+      "footer footer";
+    margin: 10%;
+    overflow-x: hidden;
+  }
+  .card__category {
+    font-size: 0.7em;
+  }
+
+  .card__heading {
+    font-size: 0.8em;
+  }
+  #banner {
+    width: 100%;
+  }
+  #banner > p#main {
+    width: 100%;
+
+    font-size: 1em;
+  }
+  #banner > p#sub {
+    font-size: 1em;
+  }
+
+  nav > span {
+    font-size: 0.7em;
+    gap: 0px;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .aboutMeTxt {
+    font-size: 0.5em;
+  }
+  #banner img{
+    width: 100%;
+    height: 100%;
+  }
+}
+#karuzela{
+  top: -100px;
+  width: 1200px;
+  height: 500px;
+  
+  transform:scale(0.5);
+  position: absolute;
+}
+#wizyta{
+  background-image: url(znanylekarz.png);
+  background-position: center;
+  background-size: cover;
+  width: 150px;
+  height: 50px;
+}
+

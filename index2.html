@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("tony")
+        var uga = [];
+        function matura(n){
+            
+            
+          if(n>0 ){
+              uga.push(n);
+            console.log(n)
+            matura(n-2);
+            console.log(n)
+            uga.push(n);
+            
+          }
+        }
+        matura(6);
+        console.log(uga)
+
+    
+      </script>
+</head>
+<body>
+    
+    <p id="wynik">Wynik</p>
+    <button onclick="matura()">wynik</button>
+</body>
+</html>
